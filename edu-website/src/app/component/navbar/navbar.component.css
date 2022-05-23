@@ -1,0 +1,90 @@
+/* Start Navbar */
+
+.navbar {
+    padding: 0px;
+    transition: all ease-in-out .4s;
+    background-color: #2f5b3a;
+}
+
+.navbar .navbar-brand {
+    padding: 0px;
+}
+
+.navbar .navbar-brand img {
+    width: 100px;
+    height: 100px;
+}
+
+.navbar .nav-item {
+    font-weight: bold;
+    margin-left: 60px;
+}
+
+@media (max-width: 992px) {
+    .navbar .nav-item {
+        margin-bottom: 20px;
+    }
+}
+
+.navbar .nav-item.active a,
+.navbar .nav-item a:hover {
+    color: #EFA21F !important;
+}
+
+.navbar .nav-item a {
+    transition: all ease-in-out .4s;
+    color: #285533 !important;
+}
+
+.navbar .main-btn {
+    padding: 12px 30px;
+    color: #EFA21F;
+    background-color: #285533;
+    box-shadow: 1px 1px 5px #EFA21F, -1px -1px 5px #efa21f;
+    font-size: 18px;
+}
+
+@media (max-width: 992px) {
+    .navbar .main-btn {
+        margin-top: 20px;
+    }
+}
+
+.navbar .main-btn:hover {
+    background-color: #fff;
+    color: #285533;
+}
+
+.navbar-light .navbar-toggler {
+    color: rgb(239 161 73);
+    border-color: rgb(239 162 31);
+    padding: 10px 13px;
+    margin-left: 20px;
+}
+
+
+/*  Start Navbar Fixed */
+
+.navbar .container .nav-item.active a,
+.navbar .container .nav-item a:hover {
+    color: #EFA21F !important;
+}
+
+.navbar .container .nav-item a {
+    cursor: pointer;
+    color: #fff !important;
+}
+
+.dropdown-menu {
+    background-color: #285533;
+    margin-top: 17px;
+}
+
+.navbar .container .nav-item a.dropdown-item {
+    color: #EFA21F !important;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* End Navbar */

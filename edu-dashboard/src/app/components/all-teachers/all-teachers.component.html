@@ -1,0 +1,86 @@
+<!--********************************* Start All Teachers Page *********************************-->
+<section class="all-teachers">
+    <div class="container">
+        <div class="row content-student">
+            <div class="col-md-4  text-center" *ngFor='let teacher of teachers'>
+                <div class="position-relative main-bg content">
+                    <div class="teacher-img position-absolute">
+                        <img src="{{teacher.image}}" alt="image of teacher" class="rounded-circle img-fluid">
+                    </div>
+                    <p class="teacher-name mt-4" style="background-color: #41bf60;">{{teacher.name}}</p>
+                    <p class="subject-name" style="background-color:#599a69">{{teacher.phone}}</p>
+                    <div class="choose mt-4">
+                        <a href="#" class="d-block sec-bg position-relative text-white p-2 mb-3 mx-auto" (click)=getId(teacher.id)><img src="../../../assets/exam.png" class="position-absolute">الامتحانات </a>
+                        <a href="#" class="d-block sec-bg position-relative text-white p-2 mb-3 mx-auto" (click)=getId(teacher.id);setvalue() style="cursor: pointer;" data-toggle="modal" data-target="#editTeacher"><i class="fas fa-user-edit main-color position-absolute"></i>تعديل </a>
+                        <a href="#" class="d-block sec-bg position-relative text-white p-2 mb-3 mx-auto (click)=getId(teacher.id)" [routerLink]="['/alLteachers',teacher.id]"><i class="fas fa-users main-color position-absolute" ></i>المجموعات </a>
+                        <a class="d-block sec-bg position-relative text-white p-2 mb-3 mx-auto (click)=getId(teacher.id)" [routerLink]="['/alLteachers/AddStudent/',teacher.id]"><i class="fas fa-user-plus main-color position-absolute"></i>اضافه طالب </a>
+                        <a href="#" class="d-block sec-bg position-relative text-white p-2 mb-3 mx-auto" (click)=getId(teacher.id) [routerLink]="['/alLteachers/deleteStudent/',teacher.id]"><i class="fas fa-user-times main-color position-absolute"></i>حذف طالب </a>
+                        <a href="#" (click)=getId(teacher.id) class="d-block sec-bg position-relative text-white p-2 mb-3 mx-auto" data-toggle="modal" data-target="#exampleModal7"><i class="fas fa-user-times main-color position-absolute"></i>حذف المدرس </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="editTeacher" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="border:none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <form [formGroup]="teacherSignUp" (ngSubmit)='teacherSignUp.valid&&FormData() ' style="width: 80%; margin:50px auto" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="inputEmail4">اسم المدرس</label>
+                        <input [class.is-valid]="teacherSignUp.controls.name.status =='VALID'" formControlName="name" type="text" class="form-control" name="name">
+                        <div *ngIf="teacherSignUp.controls.name.errors && teacherSignUp.controls.name.touched" class="text-danger p-3 font-weight-bold">Name Is Required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword4">الرقم السري</label>
+                        <input [class.is-valid]="teacherSignUp.controls.password.status =='VALID'" formControlName="password" type="password" class="form-control" name="pass">
+                        <div *ngIf="teacherSignUp.controls.password.errors && teacherSignUp.controls.password.touched" class="text-danger p-3 font-weight-bold">Password Is Required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword4">البريد الالكتروني</label>
+                        <input [class.is-valid]="teacherSignUp.controls.email.status =='VALID'" formControlName="email" type="email" class="form-control" name="email">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>رقم الهاتف</label>
+                            <input [class.is-valid]="teacherSignUp.controls.phone.status =='VALID'" formControlName="phone" type="tel" class="form-control" name="phone">
+                            <div *ngIf="teacherSignUp.controls.phone.errors && teacherSignUp.controls.phone.touched" class="text-danger p-3 font-weight-bold">Phone Is Required</div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>المادة</label>
+                            <input [class.is-valid]="teacherSignUp.controls.subject_name.status =='VALID'" formControlName="subject_name" type="text" class="form-control" name="subject_name">
+                            <div *ngIf="teacherSignUp.controls.subject_name.errors && teacherSignUp.controls.subject_name.touched" class="text-danger p-3 font-weight-bold">Required</div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>عدد الامتحانات</label>
+                            <input [class.is-valid]="teacherSignUp.controls.no_exams.status =='VALID'" formControlName="no_exams" type="number" class="form-control" name="no_exams">
+                            <div *ngIf="teacherSignUp.controls.no_exams.errors && teacherSignUp.controls.no_exams.touched" class="text-danger p-3 font-weight-bold">Numbber Is Required</div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>اضف صورة</label>
+
+                            <input type="file" class="form-control" formControlName="image" id="file">
+                        </div>
+                    </div>
+                    <button type="submit" class="main-btn d-block mr-auto mt-5 ml-auto">ارسال</button>
+                </form>
+            </div>
+            <div class="choose choose-exam text-center mb-4">
+                <a href="#" class="d-inline-block btn-danger" data-toggle="modal" data-target="#exampleModal8" (click)=deleteTeacher()>حفظ </a>
+                <a href="#" class="d-inline-block sec-bg" data-dismiss="modal"> رجوع </a>
+            </div>
+        </div>
+    </div>
+</div> -->

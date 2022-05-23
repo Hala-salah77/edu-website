@@ -1,0 +1,56 @@
+<section class="edit-group">
+    <div class="container text-right">
+        <form style="width: 80%; margin:50px auto" [formGroup]="addGroup" (ngSubmit)='addGroup.valid&&FormData()'>
+            <div class="form-group">
+                <label>اختر الصف</label>
+                <select class="form-control" [class.is-valid]="addGroup.controls.grade_id.status =='VALID'" formControlName="grade_id" name="grade_id">
+                    <option disabled value=" الصف"></option>
+                     <option *ngFor="let grade of grades" value="{{grade.id}}">{{grade.grade_name}}</option> 
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail4">اسم المجموعة</label>
+                <input [class.is-valid]="addGroup.controls.group_name.status =='VALID'" formControlName="group_name" type="text" class="form-control" name="group_name">
+                <div *ngIf="addGroup.controls.group_name.errors && addGroup.controls.group_name.touched" class="text-danger p-3 font-weight-bold">Required</div>
+            </div>
+            <div class="form-group">
+                <input hidden formControlName="teacher_id" type="text" [ngModel]="teacherId" name="teacher_id">
+            </div>
+            <button [disabled]="addGroup.invalid" [ngStyle]="addGroup.invalid? {'border-color':'red' }: {'border':'none' }" type="submit" class="d-block mr-auto mt-5 ml-auto add main-bg text-white">اضافة</button>
+        </form>
+
+
+
+
+        <div class="group text-center d-flex justify-content-between sec-bg align-items-center" *ngFor='let group of groups'>
+            <p class="text-center text-white h-100 mr-4 mb-0">{{group.group_name}}</p>
+            <button class="delete bg-danger text-white main-bg" data-toggle="modal" data-target="#deleteGroup" (click)=getId(group.id)>حذف</button>
+        </div>
+
+
+        <div class="end text-center mt-4">
+            <a class=" text-white m-auto main-btn" (click)=(backClicked())>
+                رجوع
+            </a>
+        </div>
+    </div>
+</section>
+<!-- Modal -->
+<div class="modal fade" id="deleteGroup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="border:none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body text-center">
+                <h4 class="main-color font-weight-bold mb-4 main-h">هل تريد حذف المجموعه ؟؟</h4>
+            </div>
+            <div class="choose choose-exam text-center mb-4">
+                <a href="#" class="d-inline-block btn-danger" data-toggle="modal" data-target="#exampleModal10" (click)=deleteGroup()>نعم </a>
+                <a href="#" class="d-inline-block sec-bg" data-dismiss="modal"> رجوع </a>
+            </div>
+        </div>
+    </div>
+</div>

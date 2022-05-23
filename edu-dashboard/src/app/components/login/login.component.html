@@ -1,0 +1,18 @@
+<!--********************************* Start admin signUp *********************************-->
+<Section class="sign-admin text-right">
+    <div class="container">
+        <form [formGroup]="adminlogin" (ngSubmit)='adminlogin.valid&&FormData()' style="width: 80%; margin:50px auto">
+            <div class="form-group">
+                <label for="inputEmail4">اسم الادمن</label>
+                <input [class.is-valid]="adminlogin.controls.name.status =='VALID'" formControlName="name" type="text" class="form-control" name="name">
+                <div *ngIf="adminlogin.controls.name.errors && adminlogin.controls.name.touched" class="text-danger p-3 font-weight-bold">Name Is Required</div>
+            </div>
+            <div class="form-group">
+                <label>الرقم السري</label>
+                <input [class.is-valid]="adminlogin.controls.password.status =='VALID'" formControlName="password" type="password" class="form-control" name="password">
+                <div *ngIf="adminlogin.controls.password.errors && adminlogin.controls.password.touched" class="text-danger p-3 font-weight-bold">Password Is Required</div>
+            </div>
+            <button [disabled]="adminlogin.invalid" [ngStyle]="adminlogin.invalid? {'border-color':'red' }: {'border':'none' }" type="submit" class="main-btn text-center m-auto d-block mb-4">دخول</button>
+        </form>
+    </div>
+</Section>

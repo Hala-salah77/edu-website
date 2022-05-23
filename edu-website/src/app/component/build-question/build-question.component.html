@@ -1,0 +1,78 @@
+<section class="build-exam">
+    <div class="container">
+        <h4 class="sec-bg text text-center main-h">اعدادات السؤال </h4>
+        <div class="container text-right">
+            <form style="width: 80%; margin:50px auto" [formGroup]="questionRegister" (ngSubmit)='questionRegister.valid&&FormData() '>
+                <input hidden formControlName="subject_id" type="text" class="form-control" name="subject_id" [ngModel]="subjectId">
+                <div class="form-group">
+                    <label for="inputEmail4">ادخل السؤال</label>
+                    <input [class.is-valid]="questionRegister.controls .question_name.status =='VALID'" formControlName="question_name" type="text" class="form-control" name="question_name">
+                    <div *ngIf="questionRegister.controls .question_name.errors && questionRegister.controls .question_name.touched" class="text-danger p-3 font-weight-bold">Required</div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label> الدرجة</label>
+                        <input [class.is-valid]="questionRegister.controls .mark.status =='VALID'" formControlName="mark" type="text" class="form-control" name="mark">
+                        <div *ngIf="questionRegister.controls .mark.errors && questionRegister.controls .mark.touched" class="text-danger p-3 font-weight-bold">Required</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label> الصورة</label>
+                        <input type="file" class="form-control" formControlName="question_image" multiple="">
+                    </div>
+                </div>
+                <!-- Start Right Anser -->
+                <h5 class="main-bg text-white text-center p-2 my-4">الاجابه الصحيحه</h5>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>الاجابه الصحيحه</label>
+                        <input [class.is-valid]="questionRegister.controls.answer_1.status =='VALID'" formControlName="answer_1" type="text" class="form-control" name="answer_1">
+                        <div *ngIf="questionRegister.controls .answer_1.errors && questionRegister.controls .answer_1.touched" class="text-danger p-3 font-weight-bold">Required</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>الصوره</label>
+                        <input type="file" class="form-control" formControlName="image_answer_1" multiple="">
+                    </div>
+                </div>
+                <!-- Start wrong Anser -->
+                <h5 class="bg-danger text-center text-white p-2 my-4">الاجابه الخاطئه</h5>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>الاجابه الاولي</label>
+                        <input [class.is-valid]="questionRegister.controls .answer_2.status =='VALID'" formControlName="answer_2" type="text" class="form-control" name="answer_2">
+                        <div *ngIf="questionRegister.controls .answer_2.errors && questionRegister.controls .answer_2.touched" class="text-danger p-3 font-weight-bold">Required</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>الصوره</label>
+                        <input type="file" class="form-control" formControlName="image_answer_2" multiple="">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>الاجابه الثانيه</label>
+                        <input [class.is-valid]="questionRegister.controls .answer_3.status =='VALID'" formControlName="answer_3" type="text" class="form-control" name="answer_3">
+                        <div *ngIf="questionRegister.controls.answer_3.errors && questionRegister.controls .answer_3.touched" class="text-danger p-3 font-weight-bold">Required</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>الصوره</label>
+                        <input type="file" class="form-control" formControlName="image_answer_3" multiple="">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>الاجابه الثالثه</label>
+                        <input [class.is-valid]="questionRegister.controls.answer_4.status =='VALID'" formControlName="answer_4" type="text" class="form-control" name="answer_4">
+                        <div *ngIf="questionRegister.controls .answer_4.errors && questionRegister.controls .answer_4.touched" class="text-danger p-3 font-weight-bold"> Required</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>الصوره</label>
+                        <input type="file" class="form-control" formControlName="image_answer_4" multiple="">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-around mt-4" style="margin-top: 80px;">
+                    <button [disabled]="questionRegister.invalid" [ngStyle]="questionRegister.invalid? {'border-color':'red' }: {'border':'none' }" type="submit" class="main-btn d-block">تسجيل و اضافه سؤال</button>
+                    <a [routerLink]="['/examQuestions',examId]" class="main-btn" (click)=(noexams())> تسجيل</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

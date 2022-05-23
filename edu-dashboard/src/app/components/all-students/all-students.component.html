@@ -1,0 +1,104 @@
+<!--   Start Content -->
+<section>
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-8 mt-2">
+                <table class="table text-center">
+                    <tbody>
+                        <tr *ngFor="let student of students">
+                            <td class="student-name main-bg text-white" scope="row">{{student.name}} </td>
+                            <td class="student-do sec-bg text-white" data-toggle="modal" data-target="#exampleModal11" (click)=getId(student.id)>الدرجة </td>
+                            <td class="student-prevent  text-white main-bg" (click)=getId(student.id);setvalue()>تعديل <i class="far fa-edit"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4 text-right mt-4">
+                <!-- ################################ START SEARCH BEOX ########################################### -->
+                <form [formGroup]="searchBox" (ngSubmit)='searchBox.valid&&FormData()'>
+                    <div class="form-row ">
+                        <div class="form-group col-12">
+
+                            <label>الصف</label>
+                            <select class="form-control" [class.is-valid]="searchBox.controls.grade_id.status ==' VALID '" formControlName="grade_id" name="grade_id">
+                        <option disabled value=" الصف"></option>
+                        <option *ngFor="let grade of grades" value="{{grade.id}}">{{grade.grade_name}}</option> 
+                    </select>
+
+                        </div>
+                        <div class="form-group col-12">
+                            <label>المجموعه</label>
+                            <select class="form-control" [class.is-valid]="searchBox.controls.group_id.status =='VALID '" formControlName="group_id">
+                        <option value="المجموعة" disabled selected> </option>
+                    <option *ngFor="let group of groups" value="{{group.id}}">{{group.group_name}}></option>  
+                    </select>
+                        </div>
+                    </div>
+                    <!-- Start Search Box -->
+
+                    <div class="search text-center position-relative mt-5">
+                        <input type="search " placeholder="اسم الطالب " class="form-control mb-5" formControlName="student_name">
+                        <button type="submit" class="fas fa-search position-absolute main-bg sec-color"></button>
+                    </div>
+                    <!-- End Search Box -->
+                </form>
+
+                <!--################################ END SEARCH BEOX ###########################################-->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal11" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="border:none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <form style="width: 80%; margin:50px auto" [formGroup]="getAllTEACHERS" (ngSubmit)='getAllTEACHERS.valid&&FormData() '>
+                <div class="form-group">
+                    <label class="text-right">اختر المدرس</label>
+                    <select class="form-control" [class.is-valid]="getAllTEACHERS.controls.teacher_id.status =='VALID '" formControlName="teacher_id" name="teacher_id">
+                        <option disabled value=" الصف"></option>
+                         <option *ngFor="let teacher of teachers" value="{{teacher.id}}">{{teacher.teacher_name}}</option> 
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input hidden formControlName="student_id" type="text" [ngModel]="studentId" name="student_id">
+                </div>
+                <button class="main-btn text-center m-auto d-block mb-4" style="font-size: 15px; padding: 10px 33px;" [disabled]="getAllTEACHERS.invalid" [ngStyle]="getAllTEACHERS.invalid? {'border-color ':'red ' }: {'border ':'none ' }" type="submit">عرض النتيجة</button>
+            </form>
+            <div class="modal-body text-center student-results">
+                <table class="table table-hover text-center table-bordered m-2">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="main-bg text-white">اسم الامتحان</th>
+                            <th scope="col" class="main-bg text-white">الدرجه</th>
+                            <th scope="col" class="main-bg text-white">الدرجه النهائيه</th>
+                            <th scope="col" class="main-bg text-white">التاريخ</th>
+                            <th scope="col" class="main-bg text-white">مده الامتحان</th>
+                        </tr>
+                    </thead>
+                    <!--  <tbody>
+                        <tr *ngFor="let exam of exams">
+                            <th scope="row">{{exam.exam_title}}</th>
+                            <td>90</td>
+                            <td>100</td>
+                            <td>1/1/2021</td>
+                            <td>45:16</td>
+                        </tr>  
+                    </tbody> -->
+                </table>
+            </div>
+            <div class="choose choose-exam text-center mb-4">
+                <a href="#" class="d-inline-block sec-bg" data-dismiss="modal"> اغلق </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--   End Content -->

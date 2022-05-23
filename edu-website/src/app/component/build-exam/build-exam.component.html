@@ -1,0 +1,53 @@
+<!--********************************* Start teacher signUp *********************************-->
+<Section class="sign-teacher text-right">
+    <div class="container">
+        <form [formGroup]="examRegister" (ngSubmit)='examRegister.valid&&FormData() ' style="width: 80%; margin:50px auto" enctype="multipart/form-data">
+            <input hidden formControlName="teacher_id" type="text" [ngModel]="teacherId" value="{{teacherId}}" name="teacher_id">
+            <input hidden formControlName="subject_id" type="text" [ngModel]="subjectId" value="{{subjectId}}" name="teacher_id">
+            <div class="form-group">
+                <label for="inputEmail4">عنوان الامتحان</label>
+                <input [class.is-valid]="examRegister.controls .exam_title.status =='VALID'" formControlName="exam_title" type="text" class="form-control" name=" exam_title">
+                <div *ngIf="examRegister.controls .exam_title.errors && examRegister.controls .exam_title.touched" class="text-danger p-3 font-weight-bold">Name Is Required</div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>الصف</label>
+                    <select class="form-control" [class.is-valid]="examRegister.controls.grade_id.status =='VALID'" formControlName="grade_id" name="grade_id">
+                    <option disabled value=" ">الصف</option>
+                    <option *ngFor="let grade of grades"value="{{grade.id}}">{{grade.grade_name}}</option> 
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>الوقت الكلي </label>
+                    <input [class.is-valid]="examRegister.controls.full_time.status =='VALID'" formControlName="full_time" type="number" class="form-control" name="full_time">
+                    <div *ngIf="examRegister.controls.full_time.errors && examRegister.controls.full_time.touched" class="text-danger p-3 font-weight-bold">FullTime Is Required</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>وقت البدء </label>
+                    <input type="text" datetime="yyyy-MM-dd" datetime-model="yyyy-MM-ddTHH:mm:ss" [class.is-valid]="examRegister.controls.start_time.status =='VALID'" formControlName="start_time" class="form-control" name="start_time">
+                    <div *ngIf="examRegister.controls.start_time.errors && examRegister.controls.start_time.touched" class="text-danger p-3 font-weight-bold">Required</div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>وقت الانتهاء</label>
+                    <input type="text" datetime="yyyy-MM-dd" datetime-model="yyyy-MM-ddTHH:mm:ss" [class.is-valid]="examRegister.controls.end_time.status =='VALID'" formControlName="end_time" class="form-control" name="end_time">
+                    <div *ngIf="examRegister.controls.end_time.errors && examRegister.controls.end_time.touched" class="text-danger p-3 font-weight-bold">Required</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>المجموعه</label>
+                    <select class="form-control" [class.is-valid]="examRegister.controls.group_id.status =='VALID'" formControlName="group_id">
+                        <option value="المجموعة" disabled selected> </option>
+                       <option *ngFor="let group of groups" value="{{group.id}}">{{group.group_name}}</option>  
+                    </select>
+                </div>
+            </div>
+            <div class="d-flex justify-content-around mt-4" style="margin-top: 80px;">
+                <button [disabled]="examRegister.invalid" [ngStyle]="examRegister.invalid? {'border-color':'red' }: {'border':'none' }" type="submit" class="main-btn text-center m-auto d-block mb-4">تسجيل</button>
+                <a [routerLink]="['/buildExam',examId]" class="main-btn"> الانتقال الي الاسئلة</a>
+            </div>
+        </form>
+    </div>
+</Section>

@@ -1,0 +1,874 @@
+/* Start Main Rules */
+
+button:focus {
+    outline: none;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    transition: all .4s ease-in-out
+}
+
+.main-h {
+    padding: 10px;
+    color: #fff;
+    max-width: 70%;
+    margin: 40px auto 60px;
+    border-radius: 20px;
+}
+
+section {
+    padding: 70px 0px;
+}
+
+* {
+    font-weight: bold;
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+}
+
+.sec-color {
+    color: #EFA21F !important;
+}
+
+.main-color {
+    color: #285533 !important;
+}
+
+.sec-bg {
+    background-color: #EFA21F !important;
+}
+
+.main-bg {
+    background-color: #285533 !important;
+}
+
+.main-btn {
+    box-shadow: 6px 8px 10px #285533;
+    color: #285533;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px 60px;
+    background-color: #efa21f;
+    border: none;
+    font-size: 20px;
+    transition: all ease-in-out .4s;
+}
+
+.main-btn:hover {
+    background-color: #fff;
+    transform: translateY(-5px);
+}
+
+.main-btn:focus {
+    outline: none !important;
+}
+
+.main-head {
+    margin: 10px auto 60px;
+}
+
+.main-head h2 {
+    display: inline-block;
+    border-bottom: 4px solid #285533;
+    padding: 20px;
+}
+
+.main-head span {
+    width: 4%;
+    position: absolute!important;
+    height: 10px;
+    background: #ffffff;
+    bottom: 5px;
+    right: 48.3%;
+}
+
+.fa-bell {
+    right: 20px;
+    top: 24px;
+    font-size: 25px;
+    color: #efa21f;
+}
+
+
+/* End Main Rules */
+
+
+/* Start Navbar */
+
+.navbar {
+    padding: 0px;
+    transition: all ease-in-out .4s;
+    background-color: #2f5b3a;
+}
+
+.navbar .navbar-brand {
+    padding: 0px;
+}
+
+.navbar .navbar-brand img {
+    width: 100px;
+    height: 100px;
+}
+
+.navbar .nav-item {
+    font-weight: bold;
+    margin-left: 60px;
+}
+
+@media (max-width: 992px) {
+    .navbar .nav-item {
+        margin-bottom: 20px;
+    }
+}
+
+.navbar .nav-item.active a,
+.navbar .nav-item a:hover {
+    color: #EFA21F !important;
+}
+
+.navbar .nav-item a {
+    transition: all ease-in-out .4s;
+    color: #285533 !important;
+}
+
+.navbar .main-btn {
+    padding: 12px 30px;
+    color: #EFA21F;
+    background-color: #285533;
+    box-shadow: 1px 1px 5px #EFA21F, -1px -1px 5px #efa21f;
+    font-size: 18px;
+}
+
+@media (max-width: 992px) {
+    .navbar .main-btn {
+        margin-top: 20px;
+    }
+}
+
+.navbar .main-btn:hover {
+    background-color: #fff;
+    color: #285533;
+}
+
+.navbar-light .navbar-toggler {
+    color: rgb(239 161 73);
+    border-color: rgb(239 162 31);
+    padding: 10px 13px;
+    margin-left: 20px;
+}
+
+
+/*  Start Navbar Fixed */
+
+.navbar .container .nav-item.active a,
+.navbar .container .nav-item a:hover {
+    color: #EFA21F !important;
+}
+
+.navbar .container .nav-item a {
+    color: #fff !important;
+}
+
+
+/* End Navbar */
+
+
+/* Start Header */
+
+header {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: 100% 85%;
+    background-position: center center;
+    background-image: url(./assets/header.png);
+}
+
+@media (max-width: 768px) {
+    header {
+        height: 85vh;
+        background-size: 85%;
+        background-position: top top;
+        background-image: url(./assets/header-sm.jpg);
+    }
+    header .contain {
+        background-color: rgba(40, 85, 51, .7);
+        padding: 20px 0px;
+    }
+    header .contain h1,
+    header .contain p {
+        color: #EFA21F !important;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        height: auto;
+    }
+    header .contain {
+        background-color: rgba(40, 85, 51, .7);
+        padding: 20px 0px;
+    }
+    header .contain h1,
+    header .contain p {
+        color: #EFA21F !important;
+    }
+}
+
+header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 50px;
+}
+
+header .main-btn {
+    margin-top: 10px;
+    display: inline-block
+}
+
+
+/* End Header */
+
+
+/* Start About Us Section */
+
+.about-us h4 {
+    margin-bottom: 20px;
+}
+
+
+/* End About Us Section */
+
+
+/* Start Video Section */
+
+.video .video-contain {
+    left: 30px;
+    top: 20px;
+}
+
+.video .video-background {
+    height: 90%;
+    width: 100%;
+    top: 54px;
+    background-image: url(./assets/SAVE_٢٠١٨١٠١٦_٢٢١٤١١.png);
+    background-repeat: repeat;
+    left: 25px;
+    z-index: -1;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+}
+
+video:focus {
+    outline: none;
+}
+
+.video .video-info {
+    margin-top: 40px;
+}
+
+.video h4.sec {
+    margin-top: 40px;
+}
+
+.video h5 {
+    margin: 30px 0px;
+}
+
+.about-us p,
+.video p {
+    line-height: 1.7;
+}
+
+.video li {
+    margin-bottom: 20px;
+}
+
+.video i {
+    font-size: 24px;
+    color: #41AD49;
+    margin-left: 10px;
+}
+
+
+/* End Video Section */
+
+
+/* Start Contact Us Section */
+
+.contact-us .form-group {
+    margin-bottom: 3rem;
+}
+
+.contact-us .form-control {
+    height: calc(1.5em + 1rem + 6px);
+    border: 1px solid #285533;
+    border-radius: 0rem;
+}
+
+.form-control:focus {
+    border-color: #285533;
+    box-shadow: 0 0 0 0.1rem rgba(40, 85, 51, .7);
+}
+
+.contact-us form {
+    max-width: 60%;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    .contact-us form {
+        max-width: 90%;
+    }
+}
+
+.contact-us label {
+    transition: all ease-in-out .4s;
+    color: #d3d1d1;
+    font-weight: bold;
+    font-size: 13px;
+    right: 15px;
+    top: 25%;
+}
+
+.contact-us .active-label {
+    color: #285533 !important;
+    right: 1px;
+    top: -37px;
+}
+
+.contact-us button {
+    margin-top: 40px;
+}
+
+
+/* End Contact Us Section */
+
+
+/* Start Footer */
+
+footer {
+    padding-top: 70px;
+    background-image: url(./assets/footer.png);
+    background-size: 100% 100%;
+}
+
+@media (max-width: 992px) {
+    footer {
+        background-size: cover;
+    }
+}
+
+footer .first {
+    margin-bottom: 20px !important;
+}
+
+footer .col-md-4 {
+    margin: 10px 0px 0px 0px;
+}
+
+footer img {
+    width: 150px;
+    height: 150px;
+}
+
+footer .sec {
+    color: #fff;
+}
+
+footer .sec li,
+footer .social li {
+    transition: all ease-in-out .4s;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+footer .sec li:hover {
+    color: #EFA21F;
+    transform: translateY(-3px);
+}
+
+footer .social li i {
+    transition: all ease-in-out .5s;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    border: 2px solid #EFA21F;
+    font-size: 20px;
+}
+
+footer .social li i:hover {
+    transform: rotate(360deg);
+}
+
+footer .copy {
+    padding-top: 20px;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+
+
+/* End Footer */
+
+
+/* Start Model login */
+
+.modal-body .form-group-check {
+    margin-bottom: 45px;
+}
+
+.modal-body button {
+    margin-top: 60px !important;
+    margin-bottom: 20px !important;
+}
+
+.modal-body input::placeholder {
+    color: rgba(40, 85, 51, .5);
+}
+
+.modal-body .form-control {
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid rgba(40, 85, 51, .5);
+}
+
+.modal-body .form-group input {
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+
+/* End Model login */
+
+
+/* Start Loader Screen */
+
+.loader {
+    background-color: #222;
+    z-index: 99999;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+}
+
+.loader img {
+    display: block;
+    width: 250px;
+    height: 250px;
+    animation: anmy 3s linear infinite;
+}
+
+@keyframes anmy {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-40px);
+    }
+    50% {
+        transform: translateY(-70px);
+    }
+    75% {
+        transform: translateY(-40px);
+    }
+}
+
+
+/* End Loader Screen */
+
+
+/*    *********************************Start STUDENT PAGE  ********************************* */
+
+.content-student h4 {
+    max-width: 40%;
+}
+
+.content-student .content {
+    width: 90%;
+    color: #fff;
+    margin-top: 80px;
+    margin: 50px 20px;
+    padding: 50px 0px 20px;
+    border-radius: 50px 10px;
+}
+
+.content-student .teacher-img {
+    top: -60px;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+.content-student img {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+.content-student p {
+    padding: 10px;
+    transition: all .4s ease-in-out;
+}
+
+.content-student p:hover {
+    background-color: #EFA21F !important;
+}
+
+.content-student .pres a {
+    text-decoration: none;
+    color: #fff;
+    margin: 10px 0px;
+    padding: 7px 35px;
+    border-radius: 25px;
+}
+
+.content-student .pres a:hover {
+    text-decoration: none;
+}
+
+.choose button,
+.model-btn a,
+.model-btn button {
+    border: none;
+    transition: all .4s ease-in-out;
+    margin: 20px 10px 10px 10px;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.choose button:hover,
+.model-btn a:hover,
+.choose a:hover,
+.choose button:hover {
+    transform: translateY(-3px);
+}
+
+.modal-body h4 {
+    margin-bottom: 40px !important;
+}
+
+.modal-footer a {
+    width: 100%;
+}
+
+
+/*  ********************************* End STUDENT PAGE **********************************/
+
+
+/*  *********************************Start STUDENT RESULTS PAGE  ********************************* */
+
+.student-results table {
+    margin: 70px 0px 100px 0px;
+}
+
+.student-results .table-hover tbody tr:hover {
+    color: #fff;
+    background-color: #EFA21F
+}
+
+.back .main-btn {
+    border-radius: 20px;
+    padding: 5px 60px !important;
+}
+
+.back .main-btn:hover {
+    color: #EFA21F
+}
+
+
+/* End STUDENT RESULTS PAGE  */
+
+
+/* ********************************* Start exam PAGE ********************************* */
+
+.exam h4 {
+    padding: 20px 0px;
+    margin-bottom: 0px;
+    color: #fff
+}
+
+.exam .head p {
+    margin-top: 0px;
+    color: #fff;
+    padding: 13px;
+    border: 3px solid #285533;
+    width: 33.3333333333333%;
+}
+
+.exam .question {
+    background-color: #f5f5f5;
+}
+
+.exam .question .qus {
+    border-radius: 30px 0px;
+    background: #fff;
+    padding: 15px 20px;
+}
+
+.exam .question input {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.exam .question .degree {
+    top: 50%;
+    padding: 5px 20px;
+    left: 30px;
+    border-radius: 24px;
+    color: #fff;
+}
+
+.exam .back {
+    margin-top: 50px;
+}
+
+.exam .back a {
+    padding: 5px 30px;
+}
+
+.choose-exam a {
+    padding: 5px 20px;
+    border-radius: 20px;
+    color: #fff;
+    margin-left: 20px;
+}
+
+
+/* ********************************* Start Teacher Page ********************************* */
+
+
+/* ********************************* Start Fixed Menu  **********************************/
+
+.fixed-menu {
+    padding: 30px 20px 20px;
+    z-index: 9999;
+    background-color: #222;
+    color: #fff;
+    height: 100%;
+    right: -194px;
+    top: 0px
+}
+
+.sec-nav i {
+    font-size: 28px;
+    margin-top: 6px;
+}
+
+.sec-nav p {
+    font-size: 20px;
+}
+
+
+/* End Fixed Menu*/
+
+
+/* ********************************* Start Admin Page ********************************* */
+
+.admin-link {
+    transition: all .4s ease-in-out;
+    border-color: #2f5b3a;
+    padding: 10px 0px;
+    width: 150px;
+    border-radius: 20px;
+    margin: 30px auto;
+    display: block;
+    cursor: pointer;
+}
+
+.admin-link:hover,
+.admin-link.active {
+    background-color: #2f5b3a !important;
+    border-color: #EFA21F;
+    color: #fff
+}
+
+.admin-link:focus {
+    outline: none;
+}
+
+.admin section:not(.active) {
+    display: none;
+}
+
+.all-teachers .content {
+    padding-bottom: 40px !important;
+}
+
+.all-teachers .choose img {
+    right: 30px;
+    top: 13%;
+    width: 30PX;
+    margin-left: 10px;
+    height: 30px;
+}
+
+.all-teachers .choose a {
+    border-radius: 20px;
+    width: 90%;
+}
+
+.all-teachers .choose i {
+    right: 30px;
+    top: 27%;
+    font-size: 20PX;
+    margin-left: 10px;
+}
+
+.search i,
+.search i {
+    border-radius: .25rem 0px 0px .25rem;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 50px;
+    height: 100%;
+    line-height: 2;
+    color: #fff;
+}
+
+.add-student .student-name,
+.delete-student .student-name {
+    padding: 10px;
+    border-radius: 20px 0px;
+    color: #fff;
+}
+
+.add-student .add-btn,
+.delete-student .delete-btn {
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+    border: 1px solid #EFA21F;
+    padding: 10px 34px;
+    border-radius: 20px;
+    display: block;
+    width: 200px;
+    margin: 0px auto 16px;
+}
+
+.add-student .add-btn:hover,
+.delete-student .delete-btn:hover {
+    background-color: #fff !important;
+    color: #285533 !important;
+    border: 1px solid #2f5b3a;
+}
+
+.add-student .back a,
+.delete-student .back a {
+    padding: 2px 60px !important;
+    font-size: 18px;
+}
+
+.question_row {
+    padding: 0px 40px!important;
+    background: #285533;
+    border-radius: 30px;
+}
+
+.question_row a,
+.question_row p {
+    color: #fff;
+    text-decoration: none;
+    margin: 0px;
+    height: 100%;
+    padding: 10px 30px;
+}
+
+.question_row a:hover,
+.question_row p:hover {
+    color: #fff;
+    text-decoration: none;
+    margin: 0px;
+    height: 100%;
+    padding: 10px 30px;
+}
+
+.question-bank .main-h,
+.all-exams .main-h {
+    margin: 0px auto 80px auto !important;
+}
+
+.question_row a:hover {
+    color: #EFA21F
+}
+
+.question-bank .first a {
+    color: #fff;
+    padding: 12px 60px;
+    border-radius: 30px;
+}
+
+.question-bank .first a.show-exam {
+    background: #46ca66;
+}
+
+.question-bank .first a.bulid-exam {
+    background: #caa25f;
+}
+
+.all-exams table,
+.all-exams table a {
+    color: #fff
+}
+
+.all-exams h5 a {
+    padding: 10px 40px;
+    text-align: left !important;
+    border-radius: 20px;
+}
+
+.group {
+    width: 80%;
+    margin: 30px auto;
+    border-radius: 0px 20px;
+    overflow: hidden;
+}
+
+.group p {
+    padding: 15px 20px;
+}
+
+.group .delete {
+    height: 100%;
+    padding: 15px;
+    margin: 0px;
+    width: 30%;
+    border: 0px;
+}
+
+.edit-group .add {
+    border-radius: 10px;
+    padding: 10px 60px;
+    width: 230px;
+}
+
+.edit-group .end a {
+    border-radius: 10px;
+    padding: 7px 60px;
+    width: 230px;
+    margin-top: 80px !important;
+    display: inline-block
+}
+
+.edit-group .end a:hover {
+    color: #2f5b3a !important;
+}

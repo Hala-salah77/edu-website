@@ -1,0 +1,43 @@
+<!-- *********************************Start sign-student ********************************* -->
+<!-- <section class="sign-student active">
+    <div class="container text-right">
+        <form [formGroup]="adminSignUp" (ngSubmit)='adminSignUp.valid&&FormData() ' style="width: 80%; margin:50px auto" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="inputEmail4">اسم الادمن</label>
+                <input [class.is-valid]="adminSignUp.controls.name.status =='VALID'" formControlName="name" type="text" class="form-control" name="name">
+                <div *ngIf="adminSignUp.controls.name.errors && adminSignUp.controls.name.touched" class="text-danger p-3 font-weight-bold">Name Is Required</div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword4">الرقم السري</label>
+                <input [class.is-valid]="adminSignUp.controls.password.status =='VALID'" formControlName="password" type="password" class="form-control" name="password">
+                <div *ngIf="adminSignUp.controls.password.errors && adminSignUp.controls.password.touched" class="text-danger p-3 font-weight-bold">Password Is Required</div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputAddress">رقم التليفون</label>
+                    <input [class.is-valid]="adminSignUp.controls.phone.status =='VALID'" formControlName="phone" type="tel" class="form-control" name="phone">
+                    <div *ngIf="adminSignUp.controls.phone.errors && adminSignUp.controls.phone.touched" class="text-danger p-3 font-weight-bold">Phone Is Required</div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>الايمل</label>
+                    <input [class.is-valid]="adminSignUp.controls.email.status =='VALID'" formControlName="email" type="email" class="form-control" name="email">
+                    <div *ngIf="adminSignUp.controls.email.errors && adminSignUp.controls.email.touched" class="text-danger p-3 font-weight-bold">Phone Is Required</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>اضف صورة</label>
+                    <input type="file" class="form-control" formArrayName="image">
+                </div>
+            </div>
+            <button [disabled]="adminSignUp.invalid" [ngStyle]="adminSignUp.invalid? {'border-color':'red' }: {'border':'none' }" type="submit" class="main-btn d-block mr-auto mt-5 ml-auto">ارسال</button>
+            <div *ngIf="isSuccess" class="alert alert-sucess text-center" role="alert">
+                {{ ResponseMessage}}
+            </div>
+            <div *ngIf="isUniqueEmail" class="alert alert-sucess text-center" role="alert">
+                {{ isUniqueEmailMessage}}
+            </div>
+        </form>
+    </div>
+</section> -->

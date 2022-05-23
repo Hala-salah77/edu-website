@@ -1,0 +1,50 @@
+<!--********************************* End All Questions Page *********************************-->
+<section class="all-exams text-right">
+    <div class="container">
+        <h4 class="sec-bg  text-center main-h text-center">جميع الامتحانات </h4>
+        <h5 class="main-bg text-left text-white d-inline-block px-4 py-2 mb-4"><a routerLink="buildExam" class="text-white">انشاء امتحان</a></h5>
+        <table class="table table-striped">
+            <thead>
+                <tr class="main-bg">
+                    <th scope="col">اسم الامتحان</th>
+                    <th scope="col">تفعيل <i class="far fa-check-circle"></i></th>
+                    <th scope="col">عرض <i class="far fa-eye"></i></th>
+                    <th scope="col">تعديل <i class="far fa-edit"></i></th>
+                    <th scope="col">حذف <i class="far fa-trash-alt"></i></th>
+                    <th scope="col">النتيجه</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="sec-bg" *ngFor='let exam of exams'>
+                    <th scope="col">{{exam.exam_title}}</th>
+                    <th scope="col"><a href="#">تفعيل <i class="far fa-check-circle"></i></a></th>
+                    <th scope="col"><a href="#">عرض <i class="far fa-eye"></i></a></th>
+                    <th scope="col"><a href="#">تعديل <i class="far fa-edit"></i></a></th>
+                    <th scope="col"><a href="#" (click)=getId(exam.id) data-toggle="modal" data-target="#deleteExam">حذف <i class="far fa-trash-alt"></i></a></th>
+                    <th scope="col"><a href="exam-degrees.html">النتيجه </a></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="deleteExam" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="border:none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body text-center">
+                <h4 class="main-color font-weight-bold mb-4 main-h">هل تريد حقا حذف الامتحان ؟؟</h4>
+            </div>
+            <div class="choose choose-exam text-center mb-4">
+                <a href="#" class="d-inline-block btn-danger" data-toggle="modal" data-target="#exampleModal8" (click)=deleteExam()>نعم </a>
+                <a href="#" class="d-inline-block sec-bg" data-dismiss="modal"> رجوع </a>
+            </div>
+        </div>
+    </div>
+</div>

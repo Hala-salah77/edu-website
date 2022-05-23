@@ -1,0 +1,42 @@
+<!-- Start Add Student -->
+<section class="add-student text-right">
+    <div class="container">
+        <h4 class="text-center main-bg main-h">اختر الطالب المراد اضافته</h4>
+        <form [formGroup]="addStudent" (ngSubmit)='addStudent.valid&&FormData()' class="row">
+            <div class="col-8">
+                <div class="row" *ngFor="let student of students">
+                    <div class="col-6 text-center d-flex justify-content-around student-name main-bg pt-2 mb-2">
+                        <input type="checkbox" id="{{student.id}}" name="student_id" value="student.id" style="margin-top: 15px;" type="checkbox" (click)=getstudentId(student.id)>
+                        <input hidden formControlName="teacher_id" type="text" [ngModel]="teacherId" name="teacher_id">
+                        <input hidden formControlName="student_id" type="text" [ngModel]="student_id" name="teacher_id">
+                        <p style="margin: 0px;line-height: 39px;" class="text-white">{{student.name}}</p>
+                    </div>
+                    <div class="col-6 text-center">
+                        <button class="add-btn sec-bg p-add" type="submit"> اضافة</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <label>اختر المجموعه</label>
+                        <select class="form-control" [class.is-valid]="addStudent.controls.group_id.status =='VALID'" formControlName="group_id" name="group_id">
+                                <option disabled value="المجموعة"></option>
+                             <option *ngFor="let group of groups" value="{{group.id}}">{{group.group_name}}</option> 
+                            </select>
+                    </div>
+                </div>
+                <!-- Start Search Box -->
+                <div class="search text-center position-relative mt-5">
+                    <input type="search" placeholder="اسم الطالب" class="form-control mb-5">
+                    <i class="fas fa-search position-absolute main-bg sec-color"></i>
+                </div>
+                <!-- End Search Box -->
+            </div>
+        </form>
+    </div>
+    <div class="back text-center mt-5">
+        <a routerLink="MainLinksComponent" class="main-btn" (click)=(backClicked())>الرجوع للقائمه الرئسيه</a>
+    </div>
+</section>
+<!-- End Add Student -->

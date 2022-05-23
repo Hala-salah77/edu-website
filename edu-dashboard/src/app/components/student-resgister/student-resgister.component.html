@@ -1,0 +1,37 @@
+<!-- *********************************Start sign-student ********************************* -->
+<section class="sign-student active">
+    <div class="container text-right">
+        <form [formGroup]="studentSignUp" (ngSubmit)='studentSignUp.valid&&FormData() ' style="width: 80%; margin:50px auto">
+            <div class="form-group">
+                <label for="inputEmail4">اسم الطالب</label>
+                <input [class.is-valid]="studentSignUp.controls.name.status =='VALID'" formControlName="name" type="text" class="form-control" name="name">
+                <div *ngIf="studentSignUp.controls.name.errors && studentSignUp.controls.name.touched" class="text-danger p-3 font-weight-bold">Name Is Required</div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword4">الرقم السري</label>
+                <input [class.is-valid]="studentSignUp.controls.password.status =='VALID'" formControlName="password" type="password" class="form-control" name="password">
+                <div *ngIf="studentSignUp.controls.password.errors && studentSignUp.controls.password.touched" class="text-danger p-3 font-weight-bold">Password Is Required</div>
+            </div>
+            <div class="form-group">
+                <label>الايمل</label>
+                <input [class.is-valid]="studentSignUp.controls.email.status =='VALID'" formControlName="email" type="email" class="form-control" name="email">
+                <div *ngIf="studentSignUp.controls.email.errors && studentSignUp.controls.email.touched" class="text-danger p-3 font-weight-bold">Phone Is Required</div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputAddress">رقم التليفون</label>
+                    <input [class.is-valid]="studentSignUp.controls.phone.status =='VALID'" formControlName="phone" type="tel" class="form-control" name="phone">
+                    <div *ngIf="studentSignUp.controls.phone.errors && studentSignUp.controls.phone.touched" class="text-danger p-3 font-weight-bold">Phone Is Required</div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>الصف</label>
+                    <select class="form-control" [class.is-valid]="studentSignUp.controls.grade_id.status =='VALID'" formControlName="grade_id" name="grade_id">
+                        <option disabled value=" الصف"></option>
+                     <option *ngFor="let grade of grades" value="{{grade.id}}">{{grade.grade_name}}</option> 
+                    </select>
+                </div>
+            </div>
+            <button [disabled]="studentSignUp.invalid" [ngStyle]="studentSignUp.invalid? {'border-color':'red' }: {'border':'none' }" type="submit" class="main-btn d-block mr-auto mt-5 ml-auto">ارسال</button>
+        </form>
+    </div>
+</section>

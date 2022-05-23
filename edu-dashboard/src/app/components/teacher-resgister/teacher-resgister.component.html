@@ -1,0 +1,46 @@
+<!--********************************* Start teacher signUp *********************************-->
+<Section class="sign-teacher text-right">
+    <div class="container">
+        <form [formGroup]="teacherSignUp" (ngSubmit)='teacherSignUp.valid&&FormData() ' style="width: 80%; margin:50px auto" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="inputEmail4">اسم المدرس</label>
+                <input [class.is-valid]="teacherSignUp.controls.name.status =='VALID'" formControlName="name" type="text" class="form-control" name="name">
+                <div *ngIf="teacherSignUp.controls.name.errors && teacherSignUp.controls.name.touched" class="text-danger p-3 font-weight-bold">Name Is Required</div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword4">الرقم السري</label>
+                <input [class.is-valid]="teacherSignUp.controls.password.status =='VALID'" formControlName="password" type="password" class="form-control" name="pass">
+                <div *ngIf="teacherSignUp.controls.password.errors && teacherSignUp.controls.password.touched" class="text-danger p-3 font-weight-bold">Password Is Required</div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword4">البريد الالكتروني</label>
+                <input [class.is-valid]="teacherSignUp.controls.email.status =='VALID'" formControlName="email" type="email" class="form-control" name="email">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>رقم الهاتف</label>
+                    <input [class.is-valid]="teacherSignUp.controls.phone.status =='VALID'" formControlName="phone" type="tel" class="form-control" name="phone">
+                    <div *ngIf="teacherSignUp.controls.phone.errors && teacherSignUp.controls.phone.touched" class="text-danger p-3 font-weight-bold">Phone Is Required</div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>المادة</label>
+                    <input [class.is-valid]="teacherSignUp.controls.subject_name.status =='VALID'" formControlName="subject_name" type="text" class="form-control" name="subject_name">
+                    <div *ngIf="teacherSignUp.controls.subject_name.errors && teacherSignUp.controls.subject_name.touched" class="text-danger p-3 font-weight-bold">Required</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>عدد الامتحانات</label>
+                    <input [class.is-valid]="teacherSignUp.controls.no_exams.status =='VALID'" formControlName="no_exams" type="number" class="form-control" name="no_exams">
+                    <div *ngIf="teacherSignUp.controls.no_exams.errors && teacherSignUp.controls.no_exams.touched" class="text-danger p-3 font-weight-bold">Numbber Is Required</div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>اضف صورة</label>
+
+                    <input type="file" class="form-control" formControlName="image" id="file">
+                </div>
+            </div>
+            <button type="submit" class="main-btn d-block mr-auto mt-5 ml-auto">ارسال</button>
+        </form>
+    </div>
+</Section>

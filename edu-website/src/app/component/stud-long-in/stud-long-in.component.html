@@ -1,0 +1,22 @@
+<!-- Start Student login -->
+<div class="text-right py-4">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body ">
+                <form [formGroup]="studentLogIn" class="p-4" (ngSubmit)='studentLogIn.valid&&FormData()'>
+                    <div class="form-group">
+                        <input [class.is-valid]="studentLogIn.controls.name.status =='VALID'" formControlName="name" type="text" class="form-control" placeholder="الاسم \ التليفون" name="name">
+                        <div *ngIf="studentLogIn.controls.name.errors && studentLogIn.controls.name.touched" class="text-danger p-3 font-weight-bold">Name Is Required</div>
+                    </div>
+                    <div class="form-group mb-4">
+                        <input [class.is-valid]="studentLogIn.controls.password.status =='VALID'" formControlName="password" type="password" class="form-control" placeholder="كلمه المرور" name="password">
+                        <div *ngIf="studentLogIn.controls.password.errors && studentLogIn.controls.password.touched" class="text-danger p-3 font-weight-bold">Password Is Required</div>
+                    </div>
+                    <button [disabled]="studentLogIn.invalid" [ngStyle]="studentLogIn.invalid? {'border-color':'red' }: {'border':'none' }" type="submit" class="main-btn text-center m-auto d-block mb-4">دخول</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  End LOGIN  -->

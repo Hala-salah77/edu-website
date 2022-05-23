@@ -1,0 +1,91 @@
+<!-- Start Header -->
+<header class="position-relative d-flex align-items-center justify-content-right text-center" id="home">
+    <div class="container text-center">
+        <div class="row text-center">
+            <div class="col-md-4 contain">
+                <h1 class="font-weight-bold main-color">Edu up</h1>
+                <p class="font-weight-bold main-color">نسعي لمستقبل افضل للتعليم<br> في مصر</p>
+                <button class="main-btn more" scroll="more">المزيد</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- End HEADER -->
+<!--  Start About Us -->
+<Section class="about-us text-right" id="more">
+    <div class="container">
+        <div class="main-head position-relative text-center">
+            <h2 class="main-color font-weight-bold main-color text-center">نبذه عنا </h2>
+            <span class="position-absolute"></span>
+        </div>
+        <div class="row">
+            <div class="col-md-5 d-flex justify-content-right align-items-center">
+                <div>
+                    <h4 class="main-color font-weight-bold">من نحن ؟؟</h4>
+                    <p> نخبه من المهندسين نسعي لتوفير طرق افضل للتعليم لنواكب العصر و متطلباته </p>
+                    <p> نخبه من المهندسين نسعي لتوفير طرق افضل للتعليم لنواكب العصر و متطلباته </p>
+                    <p> نخبه من المهندسين نسعي لتوفير طرق افضل للتعليم لنواكب العصر و متطلباته </p>
+                </div>
+            </div>
+            <div class="col-md-7 d-flex align-items-center">
+                <img src="../../../assets/about-us.jpg" alt="edu up info" class="img-fluid">
+            </div>
+        </div>
+
+    </div>
+</Section>
+<!-- End About Us -->
+<!-- Start Section Video -->
+<section class="video text-right">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center video-contain position-relative">
+                <video width="100%" height="90%" controls>
+                    <source src="../../../assets/Pexels Videos 2086113.mp4" type="video/mp4">
+                    <source src="../../../assets/Pexels Videos 2086113.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                  </video>
+                <div class="position-absolute video-background"></div>
+            </div>
+            <div class="col-lg-6 text-right video-info">
+                <h4 class="main-color font-weight-bold sec">ماذا نقدم؟؟</h4>
+                <p>نحن نقدم سلسله من سلسله من الامتحانات الالكترونية في جميع المواد و بعض المراجعات المختلفه نقدم هذه التقنيه بالطرق التي تواكب العصر</p>
+                <h5 class="main-color font-weight-bold">نحن الان في مراحله تطوير لتقديم الاتي :</h5>
+                <ul class="list-unstyled ">
+                    <li class="font-weight-bold"><i class="fas fa-check-circle "></i>فديوهات شرح للمواد </li>
+                    <li class="font-weight-bold"><i class=" fas fa-check-circle "></i>فديوهات شرح للمراجعه </li>
+                    <li class="font-weight-bold"><i class="fas fa-check-circle "></i>تكون بشكل و مبسط</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Section Video -->
+
+<!--  Start Contact Us -->
+<section id="con" class="contact-us">
+    <div class="container text-center">
+        <div class="main-head position-relative text-center">
+            <h2 class="main-color font-weight-bold main-color text-center">تواصل معنا </h2>
+            <span class="position-absolute"></span>
+        </div>
+        <form [formGroup]="contact">
+            <div class="form-group position-relative">
+                <label for="userName" class="text-right d-block position-absolute">الاسم</label>
+                <input type="text" class="form-control mb-4" name="userName" formControlName="userName">
+            </div>
+            <div class="form-group position-relative">
+                <label for="userEmail" class="text-right d-block position-absolute ">البريد الالكتروني</label>
+                <input type="email" class="form-control mb-4" name="userEmail" formControlName="userEmail">
+            </div>
+            <div class="form-group position-relative">
+                <label for="message " class="text-right d-block position-absolute">رسالتك</label>
+                <textarea class="form-control" name="message"></textarea>
+            </div>
+            <button class="main-btn" type="submit">أرسل</button>
+        </form>
+
+    </div>
+</section>
+<!--  End Contact Us -->
